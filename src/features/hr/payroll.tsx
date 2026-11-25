@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { toast } from "sonner";
 import { emptyPayroll, payrollColumns } from "./data";
-import { useHR } from "./store";
+import { useHR } from "./context";
 export function PayrollPage() {
   const { payroll, setPayroll, savedPayroll, setSavedPayroll } = useHR();
   function update(row: number, col: number, value: string) {

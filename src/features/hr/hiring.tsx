@@ -3,7 +3,7 @@ import { Plus, Search, LockKeyhole } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { JobTable, EmployeeTable } from "./tables";
 import { JobForm } from "./job-form";
-import { useHR } from "./store";
+import { useHR } from "./context";
 
 export function HiringPage() {
   const [tab, setTab] = useState("Existing");

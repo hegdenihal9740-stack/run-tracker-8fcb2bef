@@ -32,4 +32,5 @@ use the editor.
 ## HR application architecture
 - Render HR navigation in the root shell and each content section in its own TanStack route so navigation supports direct links and browser history.
 - Keep shared HR data in a root-mounted React provider; this frontend-only conversion retains edits during navigation, not across reloads, and must not pretend to send approvals or persist data.
+- Define HR context and its consumer hook outside the provider component module so preview Fast Refresh cannot give providers and consumers different context identities.
 - Keep domain pages, imported fixture data, and shared tables in `src/features/hr` so route files remain small and presentation logic is reusable.

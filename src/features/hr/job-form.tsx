@@ -2,7 +2,7 @@ import type { FormEvent } from "react";
 import { Button } from "@/components/ui/button";
 import { toast } from "sonner";
 import fields from "./job-fields.json";
-import { useHR } from "./store";
+import { useHR } from "./context";
 
 export function JobForm({ onDone }: { onDone: () => void }) {
   const { setJobs } = useHR();

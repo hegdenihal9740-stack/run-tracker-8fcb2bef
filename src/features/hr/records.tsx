@@ -1,5 +1,5 @@
 import { EmployeeTable, JobTable } from "./tables";
-import { useHR } from "./store";
+import { useHR } from "./context";
 import { payrollColumns } from "./data";
 export function RecordsPage() {
   const { jobs, savedPayroll } = useHR();
