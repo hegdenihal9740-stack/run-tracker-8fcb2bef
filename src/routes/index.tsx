@@ -1,3 +1,4 @@
+import { HiringPage } from "@/features/hr/hiring";
 import { createFileRoute } from "@tanstack/react-router";
 
 export const Route = createFileRoute("/")({
@@ -23,14 +24,5 @@ export const Route = createFileRoute("/")({
 });
 
 function Index() {
-  return (
-    <main className="h-dvh w-full overflow-hidden bg-background">
-      <iframe
-        className="block h-full w-full border-0"
-        src="/manager/index.html"
-        title="HR Management Dashboard"
-        sandbox="allow-scripts allow-same-origin allow-forms"
-      />
-    </main>
-  );
+  return <HiringPage />;
 }
