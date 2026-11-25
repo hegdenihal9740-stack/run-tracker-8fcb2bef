@@ -1,6 +1,6 @@
 import type { ReactNode } from "react";
 import { Link, useRouterState } from "@tanstack/react-router";
-import { BriefcaseBusiness, ChartNoAxesCombined, Wallet, Files } from "lucide-react";
+import { BriefcaseBusiness, ChartNoAxesCombined, Wallet, Files, Layers } from "lucide-react";
 import { Button } from "@/components/ui/button";
 const navigation = [
   { to: "/" as const, label: "Hiring", icon: BriefcaseBusiness },
@@ -13,11 +13,13 @@ export function HRShell({ children }: { children: ReactNode }) {
   const current = navigation.find((item) => item.to === pathname);
   return (
     <div className="hr-shell">
-      <aside className="hr-sidebar">
+      <header className="hr-topbar">
         <Link to="/" className="hr-brand">
-          HR Management
+          <span className="hr-brand-mark">
+            <Layers size={20} />
+          </span>
+          <span>HR Management</span>
         </Link>
-        <div className="hr-nav-label">HR</div>
         <nav aria-label="HR navigation">
           {navigation.map((item) => (
             <Button
@@ -26,14 +28,19 @@ export function HRShell({ children }: { children: ReactNode }) {
               className={`hr-nav-item ${pathname === item.to ? "hr-nav-active" : ""}`}
               key={item.to}
             >
-              <Link to={item.to} aria-current={pathname === item.to ? "page" : undefined}>
+              <Link
+                to={item.to}
+                title={item.label}
+                aria-current={pathname === item.to ? "page" : undefined}
+              >
                 <item.icon size={18} />
-                {item.label}
+                <span>{item.label}</span>
               </Link>
             </Button>
           ))}
         </nav>
-      </aside>
+        <span className="hr-workspace-label">Human Resources</span>
+      </header>
       <div className="hr-main">
         <header className="hr-header">
           <h1>{current?.label ?? "HR Management"}</h1>
